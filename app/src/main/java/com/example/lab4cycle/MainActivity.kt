@@ -45,3 +45,14 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
+
+fun factorial(n: Int): Double {
+    var result = 1.0
+
+    for (i in 1..n) {
+        result *= i
+    }
+
+    return result
+}
