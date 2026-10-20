@@ -110,6 +110,18 @@ fun CycleLabScreen() {
 
         Spacer(modifier = Modifier.height(8.dp))
 
+        Button(
+            onClick = {
+                result = null
+                error = ""
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Очистить результат")
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
         Spacer(modifier = Modifier.height(16.dp))
 
         if (error.isNotEmpty()) {
