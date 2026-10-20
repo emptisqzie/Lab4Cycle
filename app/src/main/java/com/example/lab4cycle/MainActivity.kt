@@ -56,3 +56,35 @@ fun factorial(n: Int): Double {
 
     return result
 }
+data class CalculationResult(
+    val sum: Double,
+    val lastTerm: Double,
+    val iterations: Int
+)
+
+fun calculateSum(epsilon: Double): CalculationResult {
+    var sum = 0.0
+    var n = 1
+    var term = 1.0
+    var lastTerm = 0.0
+    var iterations = 0
+
+    while (true) {
+        if (kotlin.math.abs(term) < epsilon) {
+            break
+        }
+
+        sum += term
+        lastTerm = term
+        iterations++
+
+        n += 2
+        term = 1.0 / factorial(n)
+    }
+
+    return CalculationResult(
+        sum = sum,
+        lastTerm = lastTerm,
+        iterations = iterations
+    )
+}
